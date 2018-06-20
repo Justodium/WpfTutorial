@@ -13,8 +13,8 @@ namespace WpfTreeView
 
     public DirectoryStructureViewModel()
     {
-      var children = DirectoryStructure.GetLogicalDrives();
-      this.Items = new ObservableCollection<DirectoryItemViewModel>(children.Select(drive => new DirectoryItemViewModel(drive.FullPath, drive.Type)));
+      var logicalDrives = DirectoryStructure.GetLogicalDrives();
+      this.Items = new ObservableCollection<DirectoryItemViewModel>(logicalDrives.Select(drive => new DirectoryItemViewModel(drive.FullPath, drive.Type)));
     }
   }
 }
